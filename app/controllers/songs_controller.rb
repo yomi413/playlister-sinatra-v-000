@@ -9,7 +9,7 @@ class SongsController < ApplicationController
     erb :'songs/index'
   end
 
-  get '/songs/new' do 
+  get '/songs/new' do
     erb :'songs/new'
   end
 
@@ -18,7 +18,7 @@ class SongsController < ApplicationController
     erb :'songs/show'
   end
 
-  post '/songs' do 
+  post '/songs' do
     @song = Song.create(name: params["Name"])
     @song.artist = Artist.find_or_create_by(name: params["Artist Name"])
     @song.genre_ids = params[:genres]
@@ -42,5 +42,5 @@ class SongsController < ApplicationController
     flash[:message] = "Successfully updated song."
     redirect "/songs/#{@song.slug}"
   end
-  
+
 end
