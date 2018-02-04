@@ -7,4 +7,5 @@ class Artist < ActiveRecord::Base
   def slug
     self.name.downcase.gsub(" ", "-")
   end
+  
 end
