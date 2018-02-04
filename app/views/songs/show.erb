@@ -12,6 +12,6 @@
 <h1>Song's Genres</h1>
 
   <% Genre.all.each do |genre| %>
-    <p><input type="text" name="genre_name" id="<%= genre.id %>" value="<%= genre.id %>"></p>
+    
     <a href="/genres/<%= genre.slug %>"><%= genre.name %></a></input>
   <% end %>
